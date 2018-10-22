@@ -6,3 +6,14 @@ Implementacion del paper "Implementation of Graphical Passwords in Internet Bank
 - Melgarejo Solis, Alrnold Kevin
 - Huerta Espinoza, Yajaira
 - Perez Escobar, Luis
+
+# Desplieque con docker-compose
+docker-compose build
+
+docker-compose up -d
+
+
+# Herramientas y frameworks usados
+- Express js
+- Monngoose
+

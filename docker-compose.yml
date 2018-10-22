@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    volumes:
+      - $PWD/data/mongo:/data/db
+  api:
+    build: ./
+    image: seguridad-app
+    restart: always
+    depends_on:
+      - mongodb
+    environment:
+      - APP_PORT=80
+      - APP_ENV=dev
+      - MONGO_HOST=mongodb
+      - MONGO_DB=seguridad
+      - MONGO_PORT=27017
+    links:
+      - mongodb:mongodb
+    ports:
+      - 3000:80
